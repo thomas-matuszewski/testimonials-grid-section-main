@@ -1,0 +1,134 @@
+@use "./index";
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+   // scroll-padding-top: ;
+}
+
+img,
+picture,
+source {
+   display: block;
+   max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   overflow-wrap: break-word;
+}
+
+body {
+   height: 100%;
+   display: grid;
+   place-content: center;
+   background-color: index.$light-gray;
+   margin: 2em 1em;
+   font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.testimonials {
+   max-width: 400px;
+   display: grid;
+   gap: 2em;
+}
+
+.testimonial {
+   border-radius: 1em;
+   padding: 2em 4em;
+   color: index.$light-gray;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   &--violet {
+      background-color: index.$moderate-violet;
+      background-image: url("/dist/img/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: top right 40px;
+   }
+   &--grey {
+      background-color: index.$very-dark-grayish-blue;
+   }
+   &--dark {
+      background-color: index.$very-dark-blackish-blue;
+   }
+   &--light {
+      background-color: index.$white;
+      color: index.$very-dark-grayish-blue;
+   }
+   &__img {
+      width: 3em;
+      border-radius: 50%;
+      border: 1px solid index.$light-grayish-blue;
+      margin-right: 1.5em;
+   }
+   &__person {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2em;
+   }
+   &__verified {
+      opacity: 0.5;
+   }
+   &__content {
+      display: grid;
+      gap: 2em;
+      margin-bottom: 2em;
+   }
+   &__info {
+      font-size: 2.4rem;
+      font-weight: 600;
+   }
+   &__quote {
+      font-size: 1.5rem;
+      line-height: 1.5em;
+      opacity: 0.7;
+   }
+}
+
+@media (min-width: 1200px) {
+   body {
+      margin: 5em;
+   }
+   .testimonials {
+      max-width: 1440px;
+      margin: auto;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3em;
+      .testimonial {
+         padding: 4em;
+         &--violet {
+            grid-column: 1 / span 2;
+            background-position: top right 80px;
+            background-size: 20%;
+         }
+         &--kira {
+            grid-column: 4;
+            grid-row: 1 / span 2;
+         }
+         &--dark {
+            grid-column: 2 / span 2;
+         }
+         &__content {
+            margin-bottom: 0;
+         }
+         &__info {
+            font-size: 2.7rem;
+         }
+         &__quote {
+            font-size: 1.6rem;
+         }
+      }
+   }
+}

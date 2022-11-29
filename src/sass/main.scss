@@ -41,9 +41,9 @@ body {
 }
 
 .testimonials {
-   max-width: 400px;
    display: grid;
    gap: 2em;
+   margin: 1em;
 }
 
 .testimonial {
@@ -91,7 +91,7 @@ body {
       font-weight: 600;
    }
    &__quote {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       line-height: 1.5em;
       opacity: 0.7;
    }
@@ -109,7 +109,7 @@ body {
       .testimonial {
          padding: 4em;
          &--violet {
-            grid-column: 1 / span 2;
+            grid-column: span 2;
             background-position: top right 80px;
             background-size: 20%;
          }
@@ -118,7 +118,7 @@ body {
             grid-row: 1 / span 2;
          }
          &--dark {
-            grid-column: 2 / span 2;
+            grid-column: span 2;
          }
          &__content {
             margin-bottom: 0;
